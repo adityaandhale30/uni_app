@@ -42,16 +42,23 @@ class BottomnavigationbarCustom extends StatelessWidget {
           icon: const Icon(Icons.fort_outlined),
         ),
         PersistentBottomNavBarItem(
-          icon: CircleAvatar(
+          icon: const CircleAvatar(
             backgroundColor: Colors.grey,
-         
             backgroundImage: AssetImage(
               "assets/harli.jpg",
             ),
           ),
-          inactiveIcon: const CircleAvatar(
-            backgroundImage: AssetImage(
+          inactiveIcon: Container(
+            clipBehavior: Clip.antiAlias,
+            height: 45,
+            width: 45,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              //color: Colors.green,
+            ),
+            child: Image.asset(
               "assets/harli.jpg",
+              fit: BoxFit.cover,
             ),
           ),
         ),

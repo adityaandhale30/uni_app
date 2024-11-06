@@ -17,11 +17,7 @@ class HomeScreen extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Container(),
-        ],
-      ),
+     // body: GridView.builder(gridDelegate: SliverFixedGridDelegate, itemBuilder: itemBuilder)
     );
   }
 }
