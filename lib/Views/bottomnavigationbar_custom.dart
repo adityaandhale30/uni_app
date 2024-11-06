@@ -44,7 +44,7 @@ class BottomnavigationbarCustom extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: CircleAvatar(
             backgroundColor: Colors.grey,
-            foregroundImage: AssetImage("assets/splash.png"),
+         
             backgroundImage: AssetImage(
               "assets/harli.jpg",
             ),
