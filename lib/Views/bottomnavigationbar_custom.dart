@@ -34,7 +34,7 @@ class BottomnavigationbarCustom extends StatelessWidget {
             color: Colors.black,
           ),
           inactiveIcon: const Icon(
-            Icons.view_agenda,
+            Icons.search_rounded,
             color: Colors.white,
           ),
         ),
