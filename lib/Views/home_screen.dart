@@ -23,9 +23,9 @@ class HomeScreen extends StatelessWidget {
             ),
             centerTitle: true,
           ),
-          SliverGap(10),
+          const SliverGap(10),
           SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             sliver: SliverGrid.builder(
                 itemCount: 20,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -45,6 +45,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+     
     );
   }
 }

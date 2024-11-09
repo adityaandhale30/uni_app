@@ -8,9 +8,13 @@ class BottomnavigationbarCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      // ),
       context,
       navBarHeight: 70,
       navBarStyle: NavBarStyle.style15,
+      //decoration: NavBarDecoration(),
       screens: [
         const HomeScreen(),
         Container(),
@@ -22,11 +26,11 @@ class BottomnavigationbarCustom extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: const Icon(
             Icons.home_outlined,
-            size: 36,
+            // size: 36,
           ),
         ),
         PersistentBottomNavBarItem(
-          icon: const Icon(Icons.book_outlined),
+          icon: const Icon(Icons.analytics_outlined),
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(
@@ -39,7 +43,7 @@ class BottomnavigationbarCustom extends StatelessWidget {
           ),
         ),
         PersistentBottomNavBarItem(
-          icon: const Icon(Icons.fort_outlined),
+          icon: const Icon(Icons.school_outlined),
         ),
         PersistentBottomNavBarItem(
           icon: const CircleAvatar(
