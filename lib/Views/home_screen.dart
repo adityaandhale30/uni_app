@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,17 +7,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.lightBlue,
-      //   title: const Text(
-      //     "UniApp",
-      //     style: TextStyle(
-      //       fontSize: 24,
-      //       fontWeight: FontWeight.w600,
-      //     ),
-      //   ),
-      //   centerTitle: true,
-      // ),
       body: CustomScrollView(
         slivers: [
           const SliverAppBar(
@@ -33,23 +23,26 @@ class HomeScreen extends StatelessWidget {
             ),
             centerTitle: true,
           ),
-          SliverGrid.builder(
-              itemCount: 20,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 5 / 8,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-              ),
-              itemBuilder: (context, idx) {
-                return Container(
-                  // margin: const EdgeInsets.only(right: 10, bottom: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: const Color.fromARGB(255, 173, 108, 108),
-                  ),
-                );
-              }),
+          SliverGap(10),
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            sliver: SliverGrid.builder(
+                itemCount: 20,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 5 / 7,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                ),
+                itemBuilder: (context, idx) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: const Color.fromARGB(255, 173, 108, 108),
+                    ),
+                  );
+                }),
+          ),
         ],
       ),
     );
