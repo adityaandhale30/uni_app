@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import 'package:uni_app/Views/home_screen.dart';
+import 'package:uni_app/Views/homescreen/home_screen.dart';
 
 class BottomnavigationbarCustom extends StatelessWidget {
   const BottomnavigationbarCustom({super.key});
