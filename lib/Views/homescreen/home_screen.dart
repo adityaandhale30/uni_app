@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:uni_app/Models/home_tab_model.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,6 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: CustomScrollView(
         slivers: [
           const SliverAppBar(
@@ -23,11 +25,11 @@ class HomeScreen extends StatelessWidget {
             ),
             centerTitle: true,
           ),
-          const SliverGap(10),
+          const SliverGap(35),
           SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             sliver: SliverGrid.builder(
-                itemCount: 20,
+                itemCount: hometab.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 5 / 7,
@@ -36,16 +38,31 @@ class HomeScreen extends StatelessWidget {
                 ),
                 itemBuilder: (context, idx) {
                   return Container(
+                    padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
-                      color: const Color.fromARGB(255, 173, 108, 108),
+                      color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.black,
+                            blurRadius: 40,
+                            spreadRadius: 2,
+                            offset: Offset(-2, 3))
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(hometab[idx].imagePath),
+                        const Gap(24),
+                        Text(hometab[idx].name),
+                      ],
                     ),
                   );
                 }),
           ),
         ],
       ),
-     
     );
   }
 }

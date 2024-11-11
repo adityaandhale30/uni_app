@@ -8,13 +8,9 @@ class BottomnavigationbarCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      // ),
       context,
       navBarHeight: 70,
       navBarStyle: NavBarStyle.style15,
-      //decoration: NavBarDecoration(),
       screens: [
         const HomeScreen(),
         Container(),

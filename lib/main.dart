@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:uni_app/bottomnavigationbar_custom.dart';
-import 'package:uni_app/Views/splash_screen.dart';
+import 'package:uni_app/Views/homescreen/home_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,7 +14,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-    home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }
