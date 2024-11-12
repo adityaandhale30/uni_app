@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:uni_app/Models/home_tab_model.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,8 +34,8 @@ class HomeScreen extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 5 / 7,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 20,
                 ),
                 itemBuilder: (context, idx) {
                   return Container(
@@ -44,18 +45,28 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.white,
                       boxShadow: const [
                         BoxShadow(
-                            color: Colors.black,
-                            blurRadius: 40,
-                            spreadRadius: 2,
-                            offset: Offset(-2, 3))
+                            color: Color.fromARGB(255, 106, 106, 106),
+                            blurRadius: 15,
+                            spreadRadius: 0,
+                            offset: Offset(0, 6))
                       ],
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset(hometab[idx].imagePath),
+                        Container(
+                            height: 160,
+                            width: 160,
+                            child: Image.asset(hometab[idx].imagePath)),
                         const Gap(24),
-                        Text(hometab[idx].name),
+                        Text(
+                          hometab[idx].name,
+                          style: GoogleFonts.roboto(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: const Color.fromRGBO(25, 33, 38, 1),
+                          ),
+                        ),
                       ],
                     ),
                   );
