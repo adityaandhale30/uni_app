@@ -20,7 +20,8 @@ class BottomnavigationbarCustom extends StatelessWidget {
         const AnalyticsScreen(),
         Container(),
         Container(),
-        Container()
+        Container(),
+        
       ],
       items: [
         PersistentBottomNavBarItem(
