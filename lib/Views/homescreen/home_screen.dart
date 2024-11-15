@@ -13,8 +13,14 @@ class HomeScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           const SliverAppBar(
+            stretchTriggerOffset: 200,
+            shadowColor: Color.fromARGB(255, 249, 66, 66),
+            // expandedHeight: 100,
+            shape: Border(
+              bottom: BorderSide(
+                  color: Color.fromARGB(255, 80, 191, 246), width: 5),
+            ),
             floating: true,
-            snap: true,
             stretch: true,
             backgroundColor: Colors.blueGrey,
             title: Text(
@@ -39,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 itemBuilder: (context, idx) {
                   return Container(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
                       color: Colors.white,
@@ -54,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
+                        SizedBox(
                             height: 160,
                             width: 160,
                             child: Image.asset(hometab[idx].imagePath)),
