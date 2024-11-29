@@ -8,8 +8,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: CustomScrollView(
@@ -40,26 +38,72 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildSliverAppBar() {
-    return  SliverAppBar(
-      stretchTriggerOffset: 200,
-      shadowColor: const Color.fromARGB(255, 249, 66, 66),
-      shape: const Border(
-        bottom: BorderSide(
-          color: Color.fromARGB(255, 80, 191, 246),
-          width: 5,
-        ),
-      ),
-      floating: true,
+    return SliverAppBar(
+      // Make the AppBar stretchable
       stretch: true,
-      backgroundColor: Colors.blueGrey,
-      centerTitle: true,
-      title: Text(
-        "Uni App",
-        style: GoogleFonts.roboto(
-          fontSize: 24,
-          fontWeight: FontWeight.w600,
+      stretchTriggerOffset: 200,
+      floating: true,
+      pinned: false, // Keeps the title visible at the top when scrolling
+      snap: false,
+      elevation: 10,
+      shadowColor: Colors.black.withOpacity(0.4),
+
+      // Gradient background for a professional look
+      flexibleSpace: FlexibleSpaceBar(
+        stretchModes: const [
+          StretchMode.zoomBackground,
+          StretchMode.fadeTitle,
+          StretchMode.blurBackground,
+        ],
+        background: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 15, 32, 85),
+                Color.fromARGB(255, 34, 193, 195),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
+        centerTitle: true,
+        title: Text(
+          "Uni App",
+          style: GoogleFonts.roboto(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.2,
+            color: Colors.white,
+          ),
         ),
       ),
+
+      // Shape of the AppBar's bottom border
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(15),
+        ),
+      ),
+
+      // AppBar background color fallback
+      backgroundColor: Colors.transparent,
+
+      // Add a leading icon
+      leading: IconButton(
+        icon: const Icon(Icons.menu, color: Colors.white),
+        onPressed: () {},
+      ),
+
+      // Add an action button
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.notifications, color: Colors.white),
+          onPressed: () {
+            // Action for the notifications button
+          },
+        ),
+      ],
     );
   }
 }
@@ -68,12 +112,10 @@ class HomeTabCard extends StatelessWidget {
   final String imagePath;
   final String name;
 
-
   const HomeTabCard({
     super.key,
     required this.imagePath,
     required this.name,
-  
   });
 
   @override
@@ -107,14 +149,7 @@ class HomeTabCard extends StatelessWidget {
           const Gap(16),
           Text(
             name,
-            style:const TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color:  Color.fromRGBO(25, 33, 38, 1),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+              color: Color.fromRGBO(25, 33, 38, 1),

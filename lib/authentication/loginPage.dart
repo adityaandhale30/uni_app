@@ -1,6 +1,7 @@
 //import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uni_app/Views/homescreen/home_screen.dart';
 import 'package:uni_app/bottomnavigationbar_custom.dart';
@@ -135,9 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) =>
-                              const BottomnavigationbarCustom()));
+                      Get.to(BottomNavigationBarCustom());
                     },
                     child: Container(
                       height: 40,
