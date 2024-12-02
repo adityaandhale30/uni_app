@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
       ),
 
       // Shape of the AppBar's bottom border
-      shape: RoundedRectangleBorder(
+      shape:const  RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(15),
         ),
@@ -153,3 +153,10 @@ class HomeTabCard extends StatelessWidget {
               fontSize: 18,
               fontWeight: FontWeight.w600,
               color: Color.fromRGBO(25, 33, 38, 1),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

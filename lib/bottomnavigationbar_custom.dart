@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:uni_app/Views/analytics/analytics_screen.dart';
 import 'package:uni_app/Views/homescreen/home_screen.dart';
+import 'package:uni_app/Views/profile/profile_screen.dart';
 
 class BottomNavigationBarCustom extends StatelessWidget {
   const BottomNavigationBarCustom({super.key});
@@ -15,13 +16,13 @@ class BottomNavigationBarCustom extends StatelessWidget {
       ),
       context,
       navBarHeight: 70,
-      navBarStyle: NavBarStyle.style15,
+      navBarStyle: NavBarStyle.style1,
       screens: [
         const HomeScreen(),
         const AnalyticsScreen(),
         Container(),
         Container(),
-        Container(),
+        ProfileScreen(),
       ],
       items: [
         _buildNavItem(
@@ -38,7 +39,7 @@ class BottomNavigationBarCustom extends StatelessWidget {
         ),
         PersistentBottomNavBarItem(
           inactiveIcon: const CircleAvatar(
-            backgroundColor: Colors.grey,
+            backgroundColor: Colors.black,
             backgroundImage: AssetImage("assets/harli.jpg"),
           ),
           icon: Container(
@@ -77,10 +78,7 @@ class BottomNavigationBarCustom extends StatelessWidget {
           color: Colors.white, // This will be overridden by the ShaderMask
         ),
       ),
-      inactiveIcon: Icon(
-        icon,
-        color: Colors.grey,
-      ),
+      inactiveIcon: Icon(icon, color: Colors.black),
     );
   }
 }
