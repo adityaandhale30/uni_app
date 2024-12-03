@@ -125,6 +125,7 @@ class HomeTabCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: Colors.white,
+        
         boxShadow: const [
           BoxShadow(
             color: Color.fromARGB(255, 106, 106, 106),
