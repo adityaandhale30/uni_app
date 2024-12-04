@@ -147,6 +147,7 @@ class HomeTabCard extends StatelessWidget {
               ),
             ),
           ),
+          
           const Gap(16),
           Text(
             name,
